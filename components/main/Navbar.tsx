@@ -11,6 +11,10 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
     <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-50 px-10">
       <div className="w-full h-full flex flex-row items-center justify-between m-auto px-[10px]">
@@ -28,7 +32,7 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex w-[500px] h-full flex-row items-center justify-between md:mr-20">
-          <div className="flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
+          <div className="flex items-center justify-between w-full h-auto bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
             <Link href="/team" className="cursor-pointer">
               Our Team
             </Link>
@@ -43,14 +47,14 @@ const Navbar = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden flex flex-col items-center w-full bg-[#0300145e] border-t border-[#7042f861] mt-2">
-          <Link href="/team" className="cursor-pointer py-2 text-gray-200">
+        <div className="md:hidden fixed top-[65px] inset-x-0 flex flex-col items-center justify-center bg-[#0300145e] backdrop-blur-lg z-40">
+          <Link href="/team" className="cursor-pointer py-2 text-gray-200" onClick={closeMenu}>
             Our Team
           </Link>
-          <Link href="/events" className="cursor-pointer py-2 text-gray-200">
+          <Link href="/events" className="cursor-pointer py-2 text-gray-200" onClick={closeMenu}>
             Events
           </Link>
-          <Link href="#testimonials" className="cursor-pointer py-2 text-gray-200">
+          <Link href="#testimonials" className="cursor-pointer py-2 text-gray-200" onClick={closeMenu}>
             Success Stories
           </Link>
         </div>
