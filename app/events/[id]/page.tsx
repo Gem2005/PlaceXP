@@ -13,7 +13,7 @@ interface EventImage {
 }
 
 // This would typically come from an API or database
-const eventDetails = {
+const eventDetails: { id: string; title: string; date: string; description: string; images: EventImage[] } = {
   id: "mock-interviews-2024",
   title: "Mock Interviews 2024",
   date: "March 15, 2024",
@@ -34,7 +34,7 @@ const eventDetails = {
   ],
 };
 
-export default function EventDetailPage({ params }: { params: { id: string } }) {
+export default function EventDetailPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const nextImage = () => {
@@ -126,4 +126,3 @@ export default function EventDetailPage({ params }: { params: { id: string } }) 
     </div>
   );
 }
-

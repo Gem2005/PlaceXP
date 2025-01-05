@@ -2,8 +2,8 @@
 
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { slideInFromLeft, slideInFromRight, slideInFromTop } from "@/utils/motion";
-import { GraduationCap } from 'lucide-react';
+import { slideInFromLeft, slideInFromRight} from "@/utils/motion";
+
 
 const flipAnimation = {
   hidden: { opacity: 0, rotateX: -90 },
